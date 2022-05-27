@@ -9,7 +9,7 @@ const Modal = ({title, children, state }) => {
     <>
       {state && (
         <Overlay>
-          <ContenedorModal className="sm:w-80">
+          <ContenedorModal>
             <EncabezadoModal>
               
               <h1 className=" md:text-xl "><strong>{title} </strong></h1>
@@ -58,22 +58,25 @@ const Overlay = styled.div`
 
 
 const ContenedorModal = styled.div`
-  width: 35vw;
+  width: 30vw;
   min-height: 100px;
   background: #fff;
   position: relative;
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 20px;
+  @media (max-width: 850px) {
+    width: 65vw;
+}
 `;
 
 const EncabezadoModal = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 1vh;
+  padding-bottom: 1vh;
+  border-bottom: 1px solid #e8e8e8; 
   h3 {
     font-weight: 500;
     font-size: 16px;

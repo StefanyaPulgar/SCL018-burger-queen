@@ -5,7 +5,7 @@ import NavMenu from "./NavMenu";
 import { ContextProducts } from "../App";
 import NotificationPush from "./NotificationPush";
 import { Link } from "react-router-dom";
-
+import down from '../assets/down.png';
 
 
 const Waiter = () => {
@@ -13,6 +13,14 @@ const Waiter = () => {
   const changeState = () => {
     globalContext.setStateModalEntry(false);
     globalContext.setStateModal(false)
+  }
+
+  const handleScroll = () => {
+    window.scroll({
+      top: document.body.offsetHeight,
+      right: 0, 
+      behavior: 'auto',
+    })
   }
 
   return (
@@ -46,9 +54,9 @@ const Waiter = () => {
         changeState={globalContext.setStateModal}
       >
         <form>
-          <section className="flex items-center flex-col gap-4">
-            <div className="space-y-2">
-              <h2 className="text-lg font-semibold border-b-2">
+          <section className="flex md:items-center flex-col">
+            <div className="">
+              <h2 className="text-base  font-semibold border-b-2 mb-1">
                 Ingrese nombre del cliente
               </h2>
               <input
@@ -59,9 +67,9 @@ const Waiter = () => {
                 onChange={(event) => globalContext.setName(event.target.value)} //recupera el valor de la entrada
               />
             </div>
-            <div className="space-y-2">
-              <h2 className="text-lg font-semibold border-b-2">
-                Ingrese numero de mesa
+            <div className="mt-2 ">
+              <h2 className="mb-1 text-base font-semibold border-b-2 ">
+              Ingrese numero de mesa
               </h2>
               <input
                 type="number"
@@ -71,25 +79,28 @@ const Waiter = () => {
                 onChange={(event) => globalContext.setTable(event.target.value)}
               />
             </div>
-
+           <div className="flex justify-center mt-3">
             <button
               onClick={() => changeState()}
               type="button"
-              className="p-2  font-weight: 500 shadow-md bg-[#ff8000]  rounded-md hover:bg-[#ff3d00]
-
-              text-white"
+              className="p-2  font-weight: 500 shadow-md bg-[#ff8000]  rounded-md hover:bg-[#ff3d00] last:text-white"
             >
               Ingresar
             </button>
-          </section>
+            </div>
+          </section> 
+          
         </form>
       </Modal>
       <section className="bg-[#fffee6]">
         <CustomerData name={globalContext.name} number={globalContext.table} />
-        <NotificationPush state={globalContext.notification} changeState={globalContext.setNotification}/>
+        {/* <NotificationPush state={globalContext.notification} changeState={globalContext.setNotification}/> */}
         <div className="flex justify-center gap-2 space-x-3 w-screen">
           <NavMenu />
         </div>
+        <button onClick={handleScroll}>
+          <img className="sm:block md: hidden " src= {down} alt=""/>
+        </button>
       </section>
     </>
   );

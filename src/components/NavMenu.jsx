@@ -55,12 +55,12 @@ const NavMenu = () => {
             Promociones
           </button>
         </div>
-        <div className="grid grid-cols-[2fr,1fr] gap-4 p-4 h-auto ">
+        <div className="grid grid-cols-[2fr,1fr] gap-4 p-4 h-auto">
           <section className="grid sm:grid-rows-3 content-between md:grid-cols-3 gap-3	">
             {menuItems.map((producto, index) => (
               <div className=" border-1 border-[#008c82] bg-[#004d47] rounded h-full shadow-md text-white" key={index}> {/*key se debe incluir para crear listas de elementos, ayuda a identificar si los items han cambiado */}
                 <div className="flex justify-center ">
-                  <h1 className="py-1">{producto.name}</h1>
+                  <h1 className="py-1"><strong>{producto.name} </strong></h1>
                 </div>
                 <div className="grid sm:grid-cols-4 md:grid-col-9  p-1 gap-2">
                   <div className="sm:col-span-2 ">
@@ -81,7 +81,7 @@ const NavMenu = () => {
             ))}
           </section>
 
-          <div className=" h-min w-full ">
+          <div className=" h-min w-full sm:hidden">
             <ShoppingCart/>
           </div>
         </div>

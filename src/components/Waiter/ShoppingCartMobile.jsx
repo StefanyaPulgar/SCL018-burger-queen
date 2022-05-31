@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
-import { ContextProducts } from "../App";
-import db from "../firebase";
+import { ContextProducts } from "../../App";
+import db from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 const ShoppingCartMobile = () => {
@@ -21,9 +21,9 @@ const ShoppingCartMobile = () => {
     );
   }, [products]);
 
-  //   const refreshPage = () => {
-  //      window.location.reload(false);
-  //  }
+    const refreshPage = () => {
+       window.location.reload(false);
+   }
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -43,9 +43,9 @@ const ShoppingCartMobile = () => {
       console.log(err);
     }
 
-    //     refreshPage();
-    //     globalContext.setName('');
-    //     globalContext.setTable('');
+        refreshPage();
+        globalContext.setName('');
+        globalContext.setTable('');
   };
 
   return (
@@ -95,7 +95,7 @@ const ShoppingCartMobile = () => {
         {products && cartOpen && (
          <div className="flex justify-center items-center  bg-green-800 ">
 
-          <div className="absolute w-60 h-auto sm:mt-[50vh] sm:mr-[80vw]">
+          <div className="absolute w-60 h-auto sm:mt-[60vh] sm:mr-[85vw]">
             
             {products.length === 0 ? (
               <div className="bg-[#26004d] rounded">

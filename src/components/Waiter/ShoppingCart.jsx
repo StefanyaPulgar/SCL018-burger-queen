@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ContextProducts } from "../App";
-import db from "../firebase";
+import { ContextProducts } from "../../App";
+import db from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 const ShoppingCart = () => {

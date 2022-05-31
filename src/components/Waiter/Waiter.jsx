@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
-import Modal from "./Modal";
+import Modal from "../Modal";
 import CustomerData from "./CustomerData";
 import NavMenu from "./NavMenu";
-import { ContextProducts } from "../App";
-import NotificationPush from "./NotificationPush";
+import { ContextProducts } from "../../App";
 import { Link } from "react-router-dom";
-import down from '../assets/down.png';
 
 
 const Waiter = () => {
@@ -13,14 +11,6 @@ const Waiter = () => {
   const changeState = () => {
     globalContext.setStateModalEntry(false);
     globalContext.setStateModal(false)
-  }
-
-  const handleScroll = () => {
-    window.scroll({
-      top: document.body.offsetHeight,
-      right: 0, 
-      behavior: 'auto',
-    })
   }
 
   return (
@@ -94,13 +84,9 @@ const Waiter = () => {
       </Modal>
       <section className="bg-[#fffee6]">
         <CustomerData name={globalContext.name} number={globalContext.table} />
-        {/* <NotificationPush state={globalContext.notification} changeState={globalContext.setNotification}/> */}
         <div className="flex justify-center gap-2 space-x-3 w-screen">
           <NavMenu />
         </div>
-        <button onClick={handleScroll}>
-          <img className="sm:block md: hidden " src= {down} alt=""/>
-        </button>
       </section>
     </>
   );

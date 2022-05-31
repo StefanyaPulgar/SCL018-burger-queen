@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
-import Waiter from "./components/Waiter";
+import Waiter from "./components/Waiter/Waiter";
 import Kitchen from "./components/Kitchen/Kitchen";
 import data from "./components/data.json";
 import OrdersOk from "./components/Kitchen/OrdersOk"
@@ -15,9 +15,6 @@ function App() {
   const [stateModal, setStateModal] = useState(false); 
   const [name, setName] = useState("");
   const [table, setTable] = useState("");
-  const [notification, setNotification] = useState(false)
-
-  
 
   const [products, setProducts] = useState({
     dataMenu: contentMenu,
@@ -75,8 +72,6 @@ function App() {
     setName,
     table,
     setTable,
-    notification,
-    setNotification,
     products,
     addCarrito,
     removeFromOrder,

@@ -1,5 +1,5 @@
 # Sabor Chileno :hamburger: :fries:
-<img src="src/assets/logo.png" width="180px">
+<img src="src/assets/logo.png" width="300px">
 
 
 ## Índice
